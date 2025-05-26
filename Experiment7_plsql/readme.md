@@ -36,6 +36,7 @@ END;
 
 **Expected Output:**  
 Greater number is: 80
+![image](https://github.com/user-attachments/assets/d11ff990-75dd-491b-b312-c6406c5a54ec)
 
 ---
 
@@ -49,6 +50,7 @@ Greater number is: 80
 
 **Expected Output:**  
 Sum of first 10 natural numbers is: 55
+![image](https://github.com/user-attachments/assets/15e601d5-b685-4219-ab60-f7f2f4a1043e)
 
 ---
 
@@ -63,6 +65,7 @@ Sum of first 10 natural numbers is: 55
 **Expected Output:**  
 n = 7  
 Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
+![image](https://github.com/user-attachments/assets/db0b0131-eefe-41a7-bd9a-90cb0c724333)
 
 ---
 
@@ -76,6 +79,7 @@ Fibonacci sequence: 0, 1, 1, 2, 3, 5, 8
 **Expected Output:**  
 n = 1535  
 Reversed number is 5351
+![image](https://github.com/user-attachments/assets/4a15010e-5cd0-402e-a37e-f7cf0818006b)
 
 ---
 
@@ -89,6 +93,8 @@ Reversed number is 5351
 **Expected Output:**  
 a = 10, b = 9, c = 15  
 Largest of three number is 15
+![image](https://github.com/user-attachments/assets/49dd9b92-d2e5-4551-b968-13e35c8b8bfe)
+
 
 ## RESULT
 Thus, the PL/SQL programs using variables, conditionals, and loops were executed successfully.
