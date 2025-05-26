@@ -11,7 +11,7 @@ PL/SQL (Procedural Language/SQL) extends SQL by adding procedural constructs lik
 
 ### **Procedure**
 A PL/SQL **procedure** is a subprogram that performs a specific action. It does not return a value directly but can return values using `OUT` parameters.
-
+  
 **Syntax:**
 ```sql
 CREATE OR REPLACE PROCEDURE procedure_name (parameters)
