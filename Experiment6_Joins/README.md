@@ -1,5 +1,5 @@
 # Experiment 6: Joins
-
+REG NO: 212223100006
 ## AIM
 To study and implement different types of joins.
 
@@ -54,124 +54,252 @@ ON table1.column = table2.column;
 
 **Question 1**
 --
--- Paste Question 1 here
+![Screenshot 2025-05-02 192729](https://github.com/user-attachments/assets/9662554a-6d88-452d-af16-10ab72298089)
+
 
 ```sql
--- Paste your SQL code below for Question 1
+   SELECT 
+    c.cust_name,
+    c.city,
+    o.ord_no,
+    o.ord_date,
+    o.purch_amt AS "Order Amount",
+    s.name,
+    s.commission
+FROM 
+    customer c
+LEFT JOIN 
+    orders o ON c.customer_id = o.customer_id
+LEFT JOIN 
+    salesman s ON o.salesman_id = s.salesman_id
 ```
 
 **Output:**
 
-![Output1](output.png)
+![Screenshot 2025-05-02 193123](https://github.com/user-attachments/assets/ace00ac8-7c00-46d6-b277-9d4af3386aa7)
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+![Screenshot 2025-05-02 192740](https://github.com/user-attachments/assets/93ec0bce-0592-4461-bc33-02d1493ae097)
+
 
 ```sql
--- Paste your SQL code below for Question 2
+SELECT
+    p.date_of_birth,
+    a.*
+FROM
+    patients p
+INNER JOIN
+    appointments a ON p.patient_id = a.patient_id
+WHERE
+    p.first_name = 'Alice';
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+![Screenshot 2025-05-02 193133](https://github.com/user-attachments/assets/1d9704cd-2f7a-4b6c-94ef-275da32f4500)
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+![Screenshot 2025-05-02 192753](https://github.com/user-attachments/assets/010cfb4f-79f5-4f98-9b3e-fe392d526b17)
+
 
 ```sql
--- Paste your SQL code below for Question 3
+SELECT
+    c.cust_name AS "Customer Name",
+    c.city,
+    s.name AS "Salesman",
+    s.commission
+FROM
+    customer c
+JOIN
+    salesman s ON c.salesman_id = s.salesman_id
+WHERE
+    s.commission > 0.12;
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+![Screenshot 2025-05-02 193141](https://github.com/user-attachments/assets/f14f55a3-738a-412d-ae3d-89df06d54f80)
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+![Screenshot 2025-05-02 192801](https://github.com/user-attachments/assets/3cdb9ac4-df01-4947-85a4-1f6da11da91a)
+
 
 ```sql
--- Paste your SQL code below for Question 4
+SELECT
+    p.*
+FROM
+    patients p
+INNER JOIN
+    appointments a ON p.patient_id = a.patient_id
+WHERE
+    a.appointment_date BETWEEN '2024-01-01' AND '2024-01-31';
 ```
 
 **Output:**
 
-![Output4](output.png)
+![Screenshot 2025-05-02 193150](https://github.com/user-attachments/assets/d6e158e3-3865-431f-bdff-af5b75d5f7cf)
+
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+![Screenshot 2025-05-02 192815](https://github.com/user-attachments/assets/5d9ddc18-efe7-4673-9326-6fa6bd149a3a)
+
 
 ```sql
--- Paste your SQL code below for Question 5
+SELECT
+    s.name AS Salesman,
+    c.cust_name AS cust_name,
+    s.city
+FROM
+    salesman s
+JOIN
+    customer c ON s.city = c.city;
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+![Screenshot 2025-05-02 193159](https://github.com/user-attachments/assets/c0eed26b-7eb1-4394-b67e-5568d6253622)
+
 
 **Question 6**
 ---
--- Paste Question 6 here
+![Screenshot 2025-05-02 192827](https://github.com/user-attachments/assets/84884d90-bcd7-4fcb-860a-4a35f031db42)
+
 
 ```sql
--- Paste your SQL code below for Question 6
+SELECT 
+    o.ord_no,
+    o.purch_amt,
+    o.ord_date,
+    c.cust_name,
+    c.city AS customer_city,
+    c.grade,
+    s.name AS salesman_name,
+    s.city AS salesman_city,
+    s.commission
+FROM 
+    orders o
+INNER JOIN 
+    customer c ON o.customer_id = c.customer_id
+INNER JOIN 
+    salesman s ON o.salesman_id = s.salesman_id;
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+![Screenshot 2025-05-02 193217](https://github.com/user-attachments/assets/1033a86b-3d1e-4c79-8f4a-f6b4371c1cca)
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+![Screenshot 2025-05-02 192838](https://github.com/user-attachments/assets/7a1b9603-4c1c-4a98-ad6f-fe94a375b744)
+
 
 ```sql
--- Paste your SQL code below for Question 7
+SELECT 
+    c.cust_name,
+    o.ord_no,
+    o.ord_date,
+    o.purch_amt
+FROM 
+    customer c
+LEFT JOIN 
+    orders o ON c.customer_id = o.customer_id
+WHERE 
+    o.purch_amt > 1000;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+![Screenshot 2025-05-02 193225](https://github.com/user-attachments/assets/d82f50cb-d39a-4f85-9214-de4cc8861ce7)
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+![Screenshot 2025-05-02 192847](https://github.com/user-attachments/assets/03739ccf-cf4a-4728-b6a1-b49863452b24)
+
 
 ```sql
--- Paste your SQL code below for Question 8
+SELECT 
+    o.ord_no,
+    o.purch_amt,
+    c.cust_name,
+    c.city
+FROM 
+    orders o
+JOIN 
+    customer c ON o.customer_id = c.customer_id
+WHERE 
+    o.purch_amt BETWEEN 500 AND 2000;
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+![Screenshot 2025-05-02 193234](https://github.com/user-attachments/assets/bbf53faa-1618-4f32-9787-b5eb8499e86f)
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+![Screenshot 2025-05-02 192856](https://github.com/user-attachments/assets/f84cff89-f5fe-43ff-9e46-08bfe4f55fff)
+
 
 ```sql
--- Paste your SQL code below for Question 9
+SELECT 
+    p.first_name AS patient_name,
+    t.test_name
+FROM 
+    patients p
+INNER JOIN 
+    test_results t ON p.patient_id = t.patient_id;
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+![image](https://github.com/user-attachments/assets/d9b0a4a2-a109-43af-8a4b-ec18bc654353)
+
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+![Screenshot 2025-05-02 192903](https://github.com/user-attachments/assets/7e8b0142-f35b-49c2-acb8-26376330a4b3)
+
 
 ```sql
--- Paste your SQL code below for Question 10
+SELECT 
+    s.name,
+    c.cust_name,
+    c.city,
+    c.grade,
+    c.salesman_id
+FROM 
+    salesman s
+LEFT JOIN 
+    customer c ON s.salesman_id = c.salesman_id
+WHERE 
+    c.grade <= 100;
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+![Screenshot 2025-05-02 193249](https://github.com/user-attachments/assets/772bacac-64e7-4dbf-9a56-08649bff8477)
 
+
+![Screenshot 2025-05-02 193306](https://github.com/user-attachments/assets/256342e8-70ce-409b-a09d-4c0699394667)
 
 ## RESULT
 Thus, the SQL queries to implement different types of joins have been executed successfully.
